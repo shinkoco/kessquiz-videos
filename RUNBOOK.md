@@ -1,5 +1,12 @@
 # Kess Quiz — routine quotidienne
 
+## ⚠️ MODE BROUILLON (depuis le 25/11/2026) — FAIT FOI sur la publication décrite plus bas
+TikTok ne publie PAS en direct. Zernio envoie la vidéo en BROUILLON dans la boîte de réception TikTok, Mathieu colle la légende depuis le hub et publie à la main.
+- posts_create_post avec `tiktok_settings.draft: true`, `scheduled_for` = 45 min AVANT l'heure de publication (TikTok livre le brouillon 20-35 min après l'envoi) : vidéo 1 → envoi 11:45 (publication 12:30), vidéo 2 → envoi 16:15 (publication 17:00). `content` = titre court (ex. « Spécial animaux »).
+- La légende n'est PAS transmise par Zernio : l'écrire dans hub/kess.json → channel.drafts = [{"time": "12:30", "label": "<titre>", "caption": "<légende du manifest>"}, {"time": "17:00", ...}] (heure = heure de PUBLICATION conseillée).
+- Étape 0 : les créneaux du jour sont « déjà faits » s'il existe des posts @kessquiz programmés aujourd'hui à 11:45 et 16:15.
+- Durée : au moins 7 jours (jusqu'au 02/12 inclus). Ensuite, on ne repasse en publication directe QUE si Mathieu le valide. À partir du 03/12, ajouter dans alerts : « Kess Quiz : 7 jours de brouillons atteints, prêt pour la publication automatique si tu valides ».
+
 Compte TikTok @kessquiz (Zernio accountId `6b0727f75db4256264895cd7`). Vidéos ~61 s, générées 100 % en code.
 
 1. Cloner : `git clone --depth 1 https://github.com/shinkoco/kessquiz-videos /home/claude/kessquiz-videos`.
@@ -31,6 +38,7 @@ Compte TikTok @kessquiz (Zernio accountId `6b0727f75db4256264895cd7`). Vidéos ~
 - Pas de faux boutons, pas de faux menus, pas d'images récupérées sur internet.
 
 ## Enrichissement de la banque (à chaque passage, AVANT de générer)
+Lire d'abord `CARNET.md` (thèmes, idées, règles actualité) et y piocher.
 Objectif : la banque doit toujours couvrir au moins 2 semaines de vidéos (2/jour, ~6 questions/vidéo).
 - Ajouter 8 questions nouvelles (pas plus) dans `engine/bank.py` (QCM thématiques et/ou TROMPE), sur les thèmes existants ou de nouveaux thèmes (sport, corps humain, cuisine, records, espace, langues…). Pour un nouveau thème, l'ajouter aussi dans `THEMES` (libellé + couleur lisible sur fond clair) et dans `caption()` (hashtags) et dans `pick()`.
 - Chaque fait est vérifié par une recherche web (source fiable : encyclopédie, site officiel, média reconnu) AVANT ajout. En cas de doute ou de sources contradictoires : ne pas ajouter.
