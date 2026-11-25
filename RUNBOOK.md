@@ -36,3 +36,11 @@ Objectif : la banque doit toujours couvrir au moins 2 semaines de vidéos (2/jou
 - Chaque fait est vérifié par une recherche web (source fiable : encyclopédie, site officiel, média reconnu) AVANT ajout. En cas de doute ou de sources contradictoires : ne pas ajouter.
 - Pas de sujets sensibles (politique, religion, drames, personnes privées). Réponses courtes (< 22 caractères), 3 options plausibles, une seule bonne réponse indiscutable.
 - Les identifiants sont uniques (préfixe du thème). Tester `python3 -c "exec(open('engine/bank.py').read())"` après modification.
+
+## HUB (studiomgi.github.io, onglet KESS)
+Après avoir programmé les posts, écrire `hub/kess.json` dans CE dépôt (la page le lit en direct), puis commit + push :
+{"updated": ISO+01:00, "date_label": "Jeudi 26 novembre", "alerts": ["Kess Quiz : …"] (vide si rien), "channel": {...}}
+`channel` : name "Kess Quiz" ; headline [début, fin en gras] ; summary 1-2 phrases ; kpis [{platform "TikTok", label "Meilleure vidéo", detail, value (vues ou null), unit "vues", bar 0-1}] ;
+followers {label "Abonnés TikTok", value (Zernio accounts_get_follower_stats), goal 1000} ; today [{time, platform "TikTok", title (ex. « Spécial animaux »), status programmé|publié|échec}] ;
+upcoming [{day, text}] ; trend {labels 7 derniers jours "dd/mm", series {"TikTok": vues/jour via analytics_get_daily_metrics}} ; engagement {likes, comments, shares, followers_gain} ; best_time.
+Ne JAMAIS inventer un chiffre : null si inconnu. Un seul appel par source et par jour.
