@@ -1,0 +1,56 @@
+{
+ "used": [
+  "f_ye",
+  "f_pl",
+  "f_co",
+  "f_ga",
+  "f_fr",
+  "f_nl",
+  "f_ch",
+  "f_ie",
+  "cap_ch",
+  "cap_ma",
+  "cap_tr",
+  "cap_nz",
+  "cap_vn",
+  "cap_sc",
+  "cap_br",
+  "cap_au"
+ ],
+ "videos": [
+  {
+   "file": "kq_20261125_1_drapeaux_drapeaux.mp4",
+   "kind": "drapeaux",
+   "theme": "drapeaux",
+   "n": 8,
+   "date": "2026-11-25T19:43",
+   "ids": [
+    "f_ye",
+    "f_pl",
+    "f_co",
+    "f_ga",
+    "f_fr",
+    "f_nl",
+    "f_ch",
+    "f_ie"
+   ]
+  },
+  {
+   "file": "kq_20261125_2_qcm_capitales.mp4",
+   "kind": "qcm",
+   "theme": "capitales",
+   "n": 8,
+   "date": "2026-11-25T19:43",
+   "ids": [
+    "cap_ch",
+    "cap_ma",
+    "cap_tr",
+    "cap_nz",
+    "cap_vn",
+    "cap_sc",
+    "cap_br",
+    "cap_au"
+   ]
+  }
+ ]
+}
