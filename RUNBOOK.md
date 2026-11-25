@@ -32,7 +32,7 @@ Compte TikTok @kessquiz (Zernio accountId `6b0727f75db4256264895cd7`). Vidéos ~
 
 ## Enrichissement de la banque (à chaque passage, AVANT de générer)
 Objectif : la banque doit toujours couvrir au moins 2 semaines de vidéos (2/jour, ~6 questions/vidéo).
-- Ajouter 10 à 15 questions nouvelles dans `engine/bank.py` (QCM thématiques et/ou TROMPE), sur les thèmes existants ou de nouveaux thèmes (sport, corps humain, cuisine, records, espace, langues…). Pour un nouveau thème, l'ajouter aussi dans `THEMES` (libellé + couleur lisible sur fond clair) et dans `caption()` (hashtags) et dans `pick()`.
+- Ajouter 8 questions nouvelles (pas plus) dans `engine/bank.py` (QCM thématiques et/ou TROMPE), sur les thèmes existants ou de nouveaux thèmes (sport, corps humain, cuisine, records, espace, langues…). Pour un nouveau thème, l'ajouter aussi dans `THEMES` (libellé + couleur lisible sur fond clair) et dans `caption()` (hashtags) et dans `pick()`.
 - Chaque fait est vérifié par une recherche web (source fiable : encyclopédie, site officiel, média reconnu) AVANT ajout. En cas de doute ou de sources contradictoires : ne pas ajouter.
 - Pas de sujets sensibles (politique, religion, drames, personnes privées). Réponses courtes (< 22 caractères), 3 options plausibles, une seule bonne réponse indiscutable.
 - Les identifiants sont uniques (préfixe du thème). Tester `python3 -c "exec(open('engine/bank.py').read())"` après modification.
