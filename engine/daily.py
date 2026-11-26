@@ -4,7 +4,7 @@ HERE=os.path.dirname(os.path.abspath(__file__)); __file__=os.path.join(HERE,'cor
 exec(open(os.path.join(HERE,'core.py')).read()); exec(open(os.path.join(HERE,'bank.py')).read())
 TIMER=3; L=lambda v: len(v)/SR
 THEMES={'drapeaux':("Drapeaux du monde",(32,190,200)),'capitales':("Capitales",(60,130,240)),'animaux':("Animaux",(60,175,90)),
-        'sciences':("Sciences",(225,150,0)),'histoire':("Histoire",(200,110,60)),'géographie':("Géographie",(30,165,140)),'trompe':("Kess se trompe ?",(255,140,40))}
+        'sciences':("Sciences",(225,150,0)),'histoire':("Histoire",(200,110,60)),'géographie':("Géographie",(30,165,140)),'actu':("Actu",(210,70,150)),'trompe':("Kess se trompe ?",(255,140,40))}
 MUSIC=[(122,220.0,[0,8,3,10],[0,None,7,None,12,10,7,None]),(126,246.9,[0,5,9,7],[0,4,7,None,9,7,4,None]),
        (118,196.0,[0,7,9,5],[7,None,4,None,0,2,4,None]),(128,233.1,[0,3,8,10],[0,3,7,10,7,3,None,None])]
 HYPE=["Premier drapeau, on s'échauffe !","Et celui-ci ?","Attention, il y a un piège !","Et ce drapeau-là ?","Un grand classique !",
@@ -250,14 +250,19 @@ def caption(kind,theme,n,err):
     tags={'drapeaux':"#quiz #drapeaux #geographie #culturegenerale #kessquiz",'capitales':"#quiz #capitales #geographie #culturegenerale #kessquiz",
           'animaux':"#quiz #animaux #culturegenerale #lesavaistu #kessquiz",'sciences':"#quiz #sciences #culturegenerale #lesavaistu #kessquiz",
           'histoire':"#quiz #histoire #culturegenerale #lesavaistu #kessquiz",'géographie':"#quiz #geographie #culturegenerale #kessquiz",
+          'actu':"#quiz #actu #culturegenerale #defi #kessquiz",
           'trompe':"#quiz #vraioufaux #culturegenerale #defi #kessquiz"}[theme]
     if kind=='trompe': head=f"❓ Kess s'est trompé {err} fois sur {n}… tu les as toutes repérées ? Vrai ou faux, dis-le en commentaire 👇"
+    elif theme=='actu': head=f"🧠 Tu as suivi l'actu ? {n} questions, 3 secondes chacune. Ton score en commentaire 👇"
     elif kind=='drapeaux': head=f"🧠 {n} drapeaux, 3 secondes chacun : tu en trouves combien ? Ton score en commentaire 👇"
     else: head=f"🧠 Spécial {THEMES[theme][0].lower()} : {n} questions, 3 secondes chacune. Ton score en commentaire 👇"
     return head+"\n"+tags
+def enough(t):
+    ids=[q[0] for q in QCM if q[1]==t]; new=[i for i in ids if i not in hist['used']]
+    return len(new)>=7 or (not new and len(ids)>=7)
 def pick(rng):
     last=[v['theme'] for v in hist['videos'][-4:]]; lastk=[v['kind'] for v in hist['videos'][-1:]]
-    opts=[('drapeaux','drapeaux'),('trompe','trompe')]+[('qcm',t) for t in ('capitales','animaux','sciences','histoire','géographie')]
+    opts=[('drapeaux','drapeaux'),('trompe','trompe')]+[('qcm',t) for t in ('capitales','animaux','sciences','histoire','géographie','actu') if enough(t)]  # il faut assez de questions pour 60 s
     w=[]
     for k,t in opts:
         x=0 if t in last else 1.0

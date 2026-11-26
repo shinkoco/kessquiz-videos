@@ -1,14 +1,14 @@
 {
- "updated": "2026-11-25T19:58:00+01:00",
- "date_label": "Mercredi 25 novembre",
+ "updated": "2026-11-26T08:42:00+01:00",
+ "date_label": "Jeudi 26 novembre",
  "alerts": [],
  "channel": {
   "name": "Kess Quiz",
   "headline": [
    "Kess Quiz,",
-   "2 brouillons arrivent demain sur TikTok."
+   "2 vidéos programmées aujourd'hui."
   ],
-  "summary": "Mode brouillon pendant 7 jours : les vidéos arrivent dans ta boîte TikTok vers 12 h et 16 h 30, colle la légende ci-dessous et publie à 12:30 et 17:00.",
+  "summary": "Publication désormais 100 % automatique : tu n'as rien à faire. Les 2 quiz partent à 12:30 et 17:00.",
   "kpis": [
    {
     "platform": "TikTok",
@@ -21,15 +21,24 @@
   ],
   "followers": {
    "label": "Abonnés TikTok",
-   "value": 36,
+   "value": 39,
    "goal": 1000
   },
-  "today": [],
-  "upcoming": [
+  "today": [
    {
-    "day": "Jeudi 26",
-    "text": "12:30 Défi 8 drapeaux · 17:00 Spécial capitales"
+    "time": "12:30",
+    "platform": "TikTok",
+    "title": "Défi 8 drapeaux",
+    "status": "programmé"
    },
+   {
+    "time": "17:00",
+    "platform": "TikTok",
+    "title": "Spécial capitales",
+    "status": "programmé"
+   }
+  ],
+  "upcoming": [
    {
     "day": "Vendredi 27",
     "text": "Production auto : 2 quiz (12:30, 17:00)"
@@ -42,17 +51,28 @@
    "followers_gain": null
   },
   "best_time": null,
-  "drafts": [
-   {
-    "time": "12:30",
-    "label": "Défi 8 drapeaux",
-    "caption": "🧠 8 drapeaux, 3 secondes chacun : tu en trouves combien ? Ton score en commentaire 👇\n#quiz #drapeaux #geographie #culturegenerale #kessquiz"
-   },
-   {
-    "time": "17:00",
-    "label": "Spécial capitales",
-    "caption": "🧠 Spécial capitales : 8 questions, 3 secondes chacune. Ton score en commentaire 👇\n#quiz #capitales #geographie #culturegenerale #kessquiz"
+  "drafts": [],
+  "trend": {
+   "labels": [
+    "20/11",
+    "21/11",
+    "22/11",
+    "23/11",
+    "24/11",
+    "25/11",
+    "26/11"
+   ],
+   "series": {
+    "TikTok": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ]
    }
-  ]
+  }
  }
 }

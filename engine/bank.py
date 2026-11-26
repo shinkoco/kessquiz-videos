@@ -82,6 +82,14 @@ QCM=[
  ('geo_russie','géographie',"Quel est le plus grand pays du monde ?",["La Russie","Le Canada","La Chine"],"La Russie !",None),
  ('geo_pacifique','géographie',"Quel est le plus grand océan du monde ?",["Le Pacifique","L'Atlantique","L'océan Indien"],"Le Pacifique !",None),
  ('geo_sahara','géographie',"Quel est le plus grand désert chaud du monde ?",["Le Sahara","Le Gobi","Le Kalahari"],"Le Sahara !","Le plus grand désert tout court, c'est l'Antarctique !"),
+ ('geo_vatican','géographie',"Quel est le plus petit pays du monde ?",["Le Vatican","Monaco","Saint-Marin"],"Le Vatican !",None),
+ ('geo_baikal','géographie',"Quel est le lac le plus profond du monde ?",["Le lac Baïkal","Le lac Tanganyika","Le lac Supérieur"],"Le lac Baïkal !",None),
+ ('geo_angel','géographie',"Dans quel pays est le Salto Ángel, plus haute chute d'eau du monde ?",["Le Venezuela","Le Brésil","L'Argentine"],"Au Venezuela !",None),
+ ('geo_kilimandjaro','géographie',"Dans quel pays se trouve le Kilimandjaro ?",["La Tanzanie","Le Kenya","L'Éthiopie"],"En Tanzanie !","C'est le plus haut sommet d'Afrique."),
+ ('act_rhum2026','actu',"Qui a gagné la Route du Rhum en novembre 2026 ?",["Tom Laperche","Charles Caudrelier","Thomas Coville"],"C'est Tom Laperche !",None),
+ ('act_bepi2026','actu',"En novembre 2026, autour de quelle planète la sonde BepiColombo s'est-elle mise en orbite ?",["Mercure","Vénus","Mars"],"Autour de Mercure !",None),
+ ('act_goncourt2026','actu',"Qui a remporté le prix Goncourt en 2026 ?",["Philippe Jaenada","Laurent Mauvignier","Kamel Daoud"],"C'est Philippe Jaenada !",None),
+ ('act_atp2026','actu',"En novembre 2026, qui a gagné les ATP Finals en simple à Turin ?",["Carlos Alcaraz","Alexander Zverev","Jannik Sinner"],"C'est Carlos Alcaraz !",None),
 ]
 # Kess se trompe : (id, question, réponse affichée, réponse dite, Kess a raison ?, verdict dit, verdict affiché)
 TROMPE=[
