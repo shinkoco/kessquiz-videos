@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T08:47:00+01:00",
+ "updated": "2026-11-26T09:58:00+01:00",
  "date_label": "Jeudi 26 novembre",
  "alerts": [],
  "channel": {
@@ -17,6 +17,14 @@
     "value": null,
     "unit": "vues",
     "bar": 0
+   },
+   {
+    "platform": "YouTube",
+    "label": "Meilleur Short",
+    "detail": "Premiers Shorts aujourd'hui",
+    "value": null,
+    "unit": "vues",
+    "bar": 0
    }
   ],
   "followers": {
@@ -29,11 +37,23 @@
     "time": "12:30",
     "platform": "TikTok",
     "title": "Défi 8 drapeaux",
+    "status": "brouillon"
+   },
+   {
+    "time": "13:00",
+    "platform": "YouTube",
+    "title": "Défi 8 drapeaux",
     "status": "programmé"
    },
    {
     "time": "17:00",
     "platform": "TikTok",
+    "title": "Spécial capitales",
+    "status": "brouillon"
+   },
+   {
+    "time": "18:00",
+    "platform": "YouTube",
     "title": "Spécial capitales",
     "status": "programmé"
    }
@@ -55,12 +75,12 @@
    {
     "time": "12:30",
     "label": "Défi 8 drapeaux",
-    "caption": "🧠 8 drapeaux, 3 secondes chacun : tu en trouves combien ? Ton score en commentaire 👇\n#quiz #drapeaux #geographie #culturegenerale #kessquiz"
+    "caption": "🧠 8 drapeaux, 3 secondes chacun : tu en trouves combien ? Ton score en commentaire 👇\n#quiz #drapeaux #kessquiz"
    },
    {
     "time": "17:00",
     "label": "Spécial capitales",
-    "caption": "🧠 Spécial capitales : 8 questions, 3 secondes chacune. Ton score en commentaire 👇\n#quiz #capitales #geographie #culturegenerale #kessquiz"
+    "caption": "🧠 Spécial capitales : 8 questions, 3 secondes chacune. Ton score en commentaire 👇\n#quiz #capitales #kessquiz"
    }
   ],
   "trend": {

@@ -1,6 +1,14 @@
 # Kess Quiz — routine quotidienne
 
-## ⚠️ MODE BROUILLON (depuis le 25/11/2026) — FAIT FOI sur la publication décrite plus bas
+## YouTube Shorts (depuis le 26/11/2026) — publication AUTOMATIQUE, jamais de brouillon
+Même vidéo que TikTok, publiée en Short via Buffer (Zernio ne gère que TikTok) :
+`create_post` channelId "6b07f35d8541f09ecbacbce7" (Kess Quiz | Défi du jour, org 6afa0ec6b734c24f5af94d04 — partagée avec Tamko et Partners in Vice : ne JAMAIS toucher à leurs chaînes), schedulingType "automatic", mode "customScheduled", dueAt ISO avec décalage Paris (ex. 2026-11-27T13:00:00+01:00), text = yt_desc du manifest, assets [{"video": {"url": "<URL raw GitHub>"}}], metadata {"youtube": {"type": "short", "title": "<yt_title>", "categoryId": "24", "madeForKids": false, "privacy": "public", "isAiGenerated": false}}.
+- Créneaux visés : vidéo 1 → 13:00, vidéo 2 → 18:00 (pic d'audience).
+- Règle des 24 h glissantes (constatée sur les autres chaînes) : 2 Shorts max par 24 h. Avant de programmer, lire dans Buffer (list_posts sur ce channelId) le sentAt (ou dueAt) des 2 derniers Shorts ; le nouveau dueAt doit être ≥ celui du Short 2 rangs avant + 24 h 20. Si le créneau calculé dépasse 22:30, reporter au lendemain.
+- Buffer gratuit : 10 posts programmés MAX pour toute l'organisation (3 chaînes) → ne programmer que les 2 Shorts du jour.
+- Stats YouTube : Buffer list_posts includeMetrics sur ce channelId (un seul appel/jour).
+
+## ⚠️ MODE BROUILLON TikTok UNIQUEMENT (depuis le 25/11/2026) — FAIT FOI sur la publication TikTok décrite plus bas
 TikTok ne publie PAS en direct. Zernio envoie la vidéo en BROUILLON dans la boîte de réception TikTok, Mathieu colle la légende depuis le hub et publie à la main.
 - posts_create_post avec `tiktok_settings.draft: true`, `scheduled_for` = 45 min AVANT l'heure de publication (TikTok livre le brouillon 20-35 min après l'envoi) : vidéo 1 → envoi 11:45 (publication 12:30), vidéo 2 → envoi 16:15 (publication 17:00). `content` = titre court (ex. « Spécial animaux »).
 - La légende n'est PAS transmise par Zernio : l'écrire dans hub/kess.json → channel.drafts = [{"time": "12:30", "label": "<titre>", "caption": "<légende du manifest>"}, {"time": "17:00", ...}] (heure = heure de PUBLICATION conseillée).

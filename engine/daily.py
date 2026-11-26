@@ -247,11 +247,9 @@ def render(kind,theme,out_path,seed):
     os.remove(raw); os.remove(wav)
     return items,NQ,ERR,TOTAL
 def caption(kind,theme,n,err):
-    tags={'drapeaux':"#quiz #drapeaux #geographie #culturegenerale #kessquiz",'capitales':"#quiz #capitales #geographie #culturegenerale #kessquiz",
-          'animaux':"#quiz #animaux #culturegenerale #lesavaistu #kessquiz",'sciences':"#quiz #sciences #culturegenerale #lesavaistu #kessquiz",
-          'histoire':"#quiz #histoire #culturegenerale #lesavaistu #kessquiz",'géographie':"#quiz #geographie #culturegenerale #kessquiz",
-          'actu':"#quiz #actu #culturegenerale #defi #kessquiz",
-          'trompe':"#quiz #vraioufaux #culturegenerale #defi #kessquiz"}[theme]
+    tags={'drapeaux':"#quiz #drapeaux #kessquiz",'capitales':"#quiz #capitales #kessquiz",'animaux':"#quiz #animaux #kessquiz",
+          'sciences':"#quiz #sciences #kessquiz",'histoire':"#quiz #histoire #kessquiz",'géographie':"#quiz #geographie #kessquiz",
+          'trompe':"#quiz #vraioufaux #kessquiz"}.get(theme,"#quiz #culturegenerale #kessquiz")
     if kind=='trompe': head=f"❓ Kess s'est trompé {err} fois sur {n}… tu les as toutes repérées ? Vrai ou faux, dis-le en commentaire 👇"
     elif theme=='actu': head=f"🧠 Tu as suivi l'actu ? {n} questions, 3 secondes chacune. Ton score en commentaire 👇"
     elif kind=='drapeaux': head=f"🧠 {n} drapeaux, 3 secondes chacun : tu en trouves combien ? Ton score en commentaire 👇"
@@ -260,6 +258,15 @@ def caption(kind,theme,n,err):
 def enough(t):
     ids=[q[0] for q in QCM if q[1]==t]; new=[i for i in ids if i not in hist['used']]
     return len(new)>=7 or (not new and len(ids)>=7)
+def yt_meta(kind,theme,n,err):
+    if kind=='trompe': title=f"Kess s'est trompé {err} fois sur {n}… tu les vois toutes ? ❓"
+    elif kind=='drapeaux': title=f"{n} drapeaux en 3 secondes : combien tu en trouves ? 🧠"
+    else: title=f"Spécial {THEMES[theme][0].lower()} : {n} questions, combien tu en trouves ? 🧠"
+    tag=caption(kind,theme,n,err).split("\n")[-1]
+    desc=("🧠 Nouveau défi Kess Quiz !\n\nPenses-tu trouver toutes les bonnes réponses ? Note ton score en commentaire et défie tes amis.\n\n"
+          "🏆 Bats Kess si tu peux ! Abonne-toi pour un nouveau défi chaque jour.\n\n"+tag+"\n\n"
+          "Voix : SIWIS (licence CC-BY 4.0), modèle Piper fr_FR-siwis — https://huggingface.co/rhasspy/piper-voices")
+    return title[:100],desc
 def pick(rng):
     last=[v['theme'] for v in hist['videos'][-4:]]; lastk=[v['kind'] for v in hist['videos'][-1:]]
     opts=[('drapeaux','drapeaux'),('trompe','trompe')]+[('qcm',t) for t in ('capitales','animaux','sciences','histoire','géographie','actu') if enough(t)]  # il faut assez de questions pour 60 s
@@ -281,6 +288,6 @@ if __name__=='__main__':
         name=f"kq_{now.strftime('%Y%m%d')}_{v+1}_{kind}_{theme}.mp4".replace('é','e')
         items,n,err,tot=render(kind,theme,os.path.join(outdir,name),seed)
         hist['used']+= [i['id'] for i in items]; hist['videos'].append(dict(file=name,kind=kind,theme=theme,n=n,date=now.isoformat()[:16],ids=[i['id'] for i in items]))
-        manifest.append(dict(file=name,kind=kind,theme=theme,n=n,duration=round(tot,1),caption=caption(kind,theme,n,err)))
+        manifest.append(dict(file=name,kind=kind,theme=theme,n=n,duration=round(tot,1),caption=caption(kind,theme,n,err),yt_title=yt_meta(kind,theme,n,err)[0],yt_desc=yt_meta(kind,theme,n,err)[1]))
         json.dump(hist,open(HIST,'w'),ensure_ascii=False,indent=1); print(name,round(tot,1),n)
     json.dump(manifest,open(os.path.join(outdir,'manifest.json'),'w'),ensure_ascii=False,indent=1)
