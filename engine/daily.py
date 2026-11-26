@@ -178,8 +178,8 @@ def render(kind,theme,out_path,seed):
     if kind=='trompe': C=[[tcard(it,s) for s in (0,1,2)] for it in items]; TBY=1505
     else: C=[[qcard(it,False),qcard(it,True),fcard(it) if SEGS[i]['fact'] else None] for i,it in enumerate(items)]; TBY=1575
     n=NQ
-    def frame(i):
-        t=i/FPS; fr=BG.copy()
+    def _frame(i):
+        t=i/FPS; fr=Image.new('RGBA',(W,H),(0,0,0,0))
         if t<T_INTRO:
             k=back(t/0.5); fr.alpha_composite(INTRO,(0,int((1-k)*900)))
             fr.alpha_composite(POSES['talk'],(340,int(1340+20*math.sin(t*12)))); header(fr,0,n,None,ACC,0); return fr
@@ -214,6 +214,9 @@ def render(kind,theme,out_path,seed):
             fr.alpha_composite(POSES['talk' if talking else 'win'],(340+int((1-k)*1100),int(1090+10*math.sin(ft*(12 if talking else 4)))))
             header(fr,q+1,n,None,ACC,(q+1)/n)
         return fr
+    SC=0.86; SW,SH=int(W*SC),int(H*SC)
+    def frame(i):
+        c=_frame(i).resize((SW,SH),Image.BILINEAR); out=BG.copy(); out.alpha_composite(c,((W-SW)//2,(H-SH)//2)); return out
     # audio
     def tick(f,v): return tone(f,.03,'sine',v,.006)
     def impact(good):
