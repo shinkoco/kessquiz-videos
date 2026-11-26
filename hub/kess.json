@@ -1,14 +1,14 @@
 {
- "updated": "2026-11-26T08:42:00+01:00",
+ "updated": "2026-11-26T08:47:00+01:00",
  "date_label": "Jeudi 26 novembre",
  "alerts": [],
  "channel": {
   "name": "Kess Quiz",
   "headline": [
    "Kess Quiz,",
-   "2 vidéos programmées aujourd'hui."
+   "2 brouillons arrivent aujourd'hui sur TikTok."
   ],
-  "summary": "Publication désormais 100 % automatique : tu n'as rien à faire. Les 2 quiz partent à 12:30 et 17:00.",
+  "summary": "Mode brouillon : les vidéos arrivent dans ta boîte TikTok vers 12 h et 16 h 30, colle la légende ci-dessous et publie à 12:30 et 17:00.",
   "kpis": [
    {
     "platform": "TikTok",
@@ -41,7 +41,7 @@
   "upcoming": [
    {
     "day": "Vendredi 27",
-    "text": "Production auto : 2 quiz (12:30, 17:00)"
+    "text": "Production : 2 quiz en brouillon (à publier à 12:30 et 17:00)"
    }
   ],
   "engagement": {
@@ -51,7 +51,18 @@
    "followers_gain": null
   },
   "best_time": null,
-  "drafts": [],
+  "drafts": [
+   {
+    "time": "12:30",
+    "label": "Défi 8 drapeaux",
+    "caption": "🧠 8 drapeaux, 3 secondes chacun : tu en trouves combien ? Ton score en commentaire 👇\n#quiz #drapeaux #geographie #culturegenerale #kessquiz"
+   },
+   {
+    "time": "17:00",
+    "label": "Spécial capitales",
+    "caption": "🧠 Spécial capitales : 8 questions, 3 secondes chacune. Ton score en commentaire 👇\n#quiz #capitales #geographie #culturegenerale #kessquiz"
+   }
+  ],
   "trend": {
    "labels": [
     "20/11",

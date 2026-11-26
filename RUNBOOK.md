@@ -1,14 +1,14 @@
 # Kess Quiz — routine quotidienne
 
-## PUBLICATION AUTOMATIQUE (26/11) — FAIT FOI
-Décision de Mathieu (toutes ses chaînes) : publication TikTok 100 % automatique. Aucun brouillon, aucune publication à la main.
-- Étape 0 : lister les posts Zernio du compte @kessquiz (accountId `6b0727f75db4256264895cd7`) et lire leurs tiktok_settings (posts_get_post). Si 2 publications automatiques sont déjà programmées ou publiées aujourd'hui, ne rien générer. Ne jamais programmer deux fois la même vidéo.
-- Envoi : posts_create_post, ce compte UNIQUEMENT, programmé : vidéo 1 à 12:30, vidéo 2 à 17:00 (`scheduled_for` = heure de publication, Europe/Paris, même heure dans `platforms`). Heure passée ou à moins de 20 min : maintenant + 30 min, au moins 3 h entre les deux vidéos.
-- Légende complète dans `content`, sans URL. Vidéo = URL raw GitHub du fichier poussé (vérifier qu'elle répond 200).
-- tiktok_settings sans `draft` : privacyLevel PUBLIC_TO_EVERYONE, allowComment, allowDuet, allowStitch, contentPreviewConfirmed, expressConsentGiven = true.
+## ⚠️ MODE BROUILLON (depuis le 25/11/2026) — FAIT FOI sur la publication décrite plus bas
+TikTok ne publie PAS en direct. Zernio envoie la vidéo en BROUILLON dans la boîte de réception TikTok, Mathieu colle la légende depuis le hub et publie à la main.
+- posts_create_post avec `tiktok_settings.draft: true`, `scheduled_for` = 45 min AVANT l'heure de publication (TikTok livre le brouillon 20-35 min après l'envoi) : vidéo 1 → envoi 11:45 (publication 12:30), vidéo 2 → envoi 16:15 (publication 17:00). `content` = titre court (ex. « Spécial animaux »).
+- La légende n'est PAS transmise par Zernio : l'écrire dans hub/kess.json → channel.drafts = [{"time": "12:30", "label": "<titre>", "caption": "<légende du manifest>"}, {"time": "17:00", ...}] (heure = heure de PUBLICATION conseillée).
+- Étape 0 : les créneaux du jour sont « déjà faits » s'il existe des posts @kessquiz programmés aujourd'hui à 11:45 et 16:15.
+- Durée : au moins 7 jours (jusqu'au 02/12 inclus). Ensuite, on ne repasse en publication directe QUE si Mathieu le valide. À partir du 03/12, ajouter dans alerts : « Kess Quiz : 7 jours de brouillons atteints, prêt pour la publication automatique si tu valides ».
+- Confirmé par Mathieu le 26/11 : Kess Quiz, nouvelle chaîne, commence en brouillons.
+- Étape 0 (suite) : ne jamais envoyer deux fois la même vidéo. Si une heure d'envoi est passée, envoyer dès que possible et indiquer dans le hub l'heure de publication ajustée.
 - Avant l'envoi d'une nouvelle vidéo : durée 59-64 s (ffprobe) et une planche d'images (ffmpeg) à regarder (aucun texte qui déborde).
-- hub/kess.json : channel.drafts = [], today au statut « programmé », aucune alerte demandant de publier à la main.
-- En cas d'échec : ne rien publier à moitié fini, signaler dans les alertes.
 
 Compte TikTok @kessquiz (Zernio accountId `6b0727f75db4256264895cd7`). Vidéos ~61 s, générées 100 % en code.
 
@@ -17,7 +17,7 @@ Compte TikTok @kessquiz (Zernio accountId `6b0727f75db4256264895cd7`). Vidéos ~
    Voix Siwis (CC-BY, crédit en bio uniquement) :
    `mkdir -p /tmp/voices && curl -sL -o /tmp/voices/fr.onnx https://huggingface.co/rhasspy/piper-voices/resolve/main/fr/fr_FR/siwis/medium/fr_FR-siwis-medium.onnx && curl -sL -o /tmp/voices/fr.onnx.json https://huggingface.co/rhasspy/piper-voices/resolve/main/fr/fr_FR/siwis/medium/fr_FR-siwis-medium.onnx.json`
    Police Poppins : `/usr/share/fonts/truetype/google-fonts/Poppins-*.ttf` (sinon la télécharger depuis github.com/google/fonts, dossier ofl/poppins).
-0. Vérifier d'abord dans Zernio (voir « Publication automatique ») si 2 publications sont déjà programmées ou publiées aujourd'hui pour @kessquiz : si oui, ne rien générer (enrichir quand même la banque) et passer au rapport.
+0. Vérifier d'abord dans Zernio (voir « Mode brouillon ») si les 2 envois du jour sont déjà programmés ou partis pour @kessquiz : si oui, ne rien générer (enrichir quand même la banque) et passer au rapport.
 3. Générer : `cd engine && python3 daily.py ../videos 2` → vidéo + `../videos/manifest.json` (file, kind, theme, n, duration, caption) ; `engine/history.json` mis à jour (questions déjà publiées).
    Forcer un format : `KQ_FORMAT=qcm:animaux` / `drapeaux:drapeaux` / `trompe:trompe`.
 4. Nettoyer : supprimer les `videos/kq_*.mp4` de plus de 3 jours.
