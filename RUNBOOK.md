@@ -22,7 +22,7 @@ Compte TikTok @kessquiz (Zernio accountId `6b0727f75db4256264895cd7`). Vidéos ~
 
 1. Cloner : `git clone --depth 1 https://github.com/shinkoco/kessquiz-videos /home/claude/kessquiz-videos`.
 2. Outils : `pip install --break-system-packages numpy pillow scipy piper-tts` si besoin, `which ffmpeg`.
-   Voix Siwis (CC-BY, crédit en bio uniquement) :
+   Voix Siwis (CC-BY ; crédit « Voix : SIWIS (licence CC-BY) » à la fin de CHAQUE légende TikTok et description YouTube, déjà ajouté par daily.py ; plus rien dans la bio) :
    `mkdir -p /tmp/voices && curl -sL -o /tmp/voices/fr.onnx https://huggingface.co/rhasspy/piper-voices/resolve/main/fr/fr_FR/siwis/medium/fr_FR-siwis-medium.onnx && curl -sL -o /tmp/voices/fr.onnx.json https://huggingface.co/rhasspy/piper-voices/resolve/main/fr/fr_FR/siwis/medium/fr_FR-siwis-medium.onnx.json`
    Police Poppins : `/usr/share/fonts/truetype/google-fonts/Poppins-*.ttf` (sinon la télécharger depuis github.com/google/fonts, dossier ofl/poppins).
 0. Vérifier d'abord dans Zernio (voir « Mode brouillon ») si les 2 envois du jour sont déjà programmés ou partis pour @kessquiz : si oui, ne rien générer (enrichir quand même la banque) et passer au rapport.
@@ -63,3 +63,8 @@ Après avoir programmé les posts, écrire `hub/kess.json` dans CE dépôt (la p
 followers {label "Abonnés TikTok", value (Zernio accounts_get_follower_stats), goal 1000} ; today [{time, platform "TikTok", title (ex. « Spécial animaux »), status programmé|publié|échec}] ;
 upcoming [{day, text}] ; trend {labels 7 derniers jours "dd/mm", series {"TikTok": vues/jour via analytics_get_daily_metrics}} ; engagement {likes, comments, shares, followers_gain} ; best_time.
 Ne JAMAIS inventer un chiffre : null si inconnu. Un seul appel par source et par jour.
+
+## Titres, emojis, hashtags (26/11, Mathieu)
+- Emojis choisis selon le thème (EMO dans daily.py), différents d'une vidéo à l'autre.
+- Hashtags : UNIQUEMENT des hashtags quiz/jeux (pas de hashtags de sujet comme #drapeaux) : #quiz + 2 tirés au sort dans HASHPOOL (daily.py), en rotation. Pas de #fyp.
+- Chaque légende TikTok et description YouTube se termine par « Voix : SIWIS (licence CC-BY) ».

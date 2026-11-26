@@ -5,9 +5,9 @@
   "theme": "drapeaux",
   "n": 8,
   "duration": 62.2,
-  "caption": "🧠 8 drapeaux, 3 secondes chacun : tu en trouves combien ? Ton score en commentaire 👇\n#quiz #drapeaux #kessquiz",
-  "yt_title": "8 drapeaux en 3 secondes : combien tu en trouves ? 🧠",
-  "yt_desc": "🧠 Nouveau défi Kess Quiz !\n\nPenses-tu trouver toutes les bonnes réponses ? Note ton score en commentaire et défie tes amis.\n\n🏆 Bats Kess si tu peux ! Abonne-toi pour un nouveau défi chaque jour.\n\n#quiz #drapeaux #kessquiz\n\nVoix : SIWIS (licence CC-BY 4.0), modèle Piper fr_FR-siwis — https://huggingface.co/rhasspy/piper-voices"
+  "caption": "🚩 8 drapeaux, 3 secondes chacun : tu en trouves combien ? Ton score en commentaire 👇\n#quiz #testtonniveau #trivia\nVoix : SIWIS (licence CC-BY)",
+  "yt_title": "8 drapeaux en 3 secondes : combien tu en trouves ? 🌍",
+  "yt_desc": "🚩 Nouveau défi Kess Quiz !\n\nPenses-tu trouver toutes les bonnes réponses ? Note ton score en commentaire et défie tes amis.\n\n🏆 Bats Kess si tu peux ! Abonne-toi pour un nouveau défi chaque jour.\n\n#quiz #testtonniveau #trivia\n\nVoix : SIWIS (licence CC-BY)"
  },
  {
   "file": "kq_20261125_2_qcm_capitales.mp4",
@@ -15,8 +15,8 @@
   "theme": "capitales",
   "n": 8,
   "duration": 60.7,
-  "caption": "🧠 Spécial capitales : 8 questions, 3 secondes chacune. Ton score en commentaire 👇\n#quiz #capitales #kessquiz",
-  "yt_title": "Spécial capitales : 8 questions, combien tu en trouves ? 🧠",
-  "yt_desc": "🧠 Nouveau défi Kess Quiz !\n\nPenses-tu trouver toutes les bonnes réponses ? Note ton score en commentaire et défie tes amis.\n\n🏆 Bats Kess si tu peux ! Abonne-toi pour un nouveau défi chaque jour.\n\n#quiz #capitales #kessquiz\n\nVoix : SIWIS (licence CC-BY 4.0), modèle Piper fr_FR-siwis — https://huggingface.co/rhasspy/piper-voices"
+  "caption": "📍 Spécial capitales : 8 questions, 3 secondes chacune. Ton score en commentaire 👇\n#quiz #quizz #cerveau\nVoix : SIWIS (licence CC-BY)",
+  "yt_title": "Spécial capitales : 8 questions, combien tu en trouves ? 🏙️",
+  "yt_desc": "📍 Nouveau défi Kess Quiz !\n\nPenses-tu trouver toutes les bonnes réponses ? Note ton score en commentaire et défie tes amis.\n\n🏆 Bats Kess si tu peux ! Abonne-toi pour un nouveau défi chaque jour.\n\n#quiz #quizz #cerveau\n\nVoix : SIWIS (licence CC-BY)"
  }
 ]
