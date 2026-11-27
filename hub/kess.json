@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-26T09:58:00+01:00",
- "date_label": "Jeudi 26 novembre",
+ "updated": "2026-11-27T08:53:00+01:00",
+ "date_label": "Vendredi 27 novembre",
  "alerts": [],
  "channel": {
   "name": "Kess Quiz",
@@ -8,23 +8,23 @@
    "Kess Quiz,",
    "2 brouillons arrivent aujourd'hui sur TikTok."
   ],
-  "summary": "Mode brouillon : les vidéos arrivent dans ta boîte TikTok vers 12 h et 16 h 30, colle la légende ci-dessous et publie à 12:30 et 17:00.",
+  "summary": "Les vidéos arrivent dans ta boîte TikTok vers 12 h et 16 h 30 : colle la légende ci-dessous et publie à 12:30 et 17:00. Les Shorts partent seuls à 13:23 et 18:23.",
   "kpis": [
    {
     "platform": "TikTok",
     "label": "Meilleure vidéo",
-    "detail": "Aucune vidéo publiée",
-    "value": null,
+    "detail": "Défi 8 drapeaux",
+    "value": 436,
     "unit": "vues",
-    "bar": 0
+    "bar": 1
    },
    {
     "platform": "YouTube",
     "label": "Meilleur Short",
-    "detail": "Premiers Shorts aujourd'hui",
-    "value": null,
+    "detail": "Spécial capitales",
+    "value": 21,
     "unit": "vues",
-    "bar": 0
+    "bar": 0.05
    }
   ],
   "followers": {
@@ -36,62 +36,62 @@
    {
     "time": "12:30",
     "platform": "TikTok",
-    "title": "Défi 8 drapeaux",
-    "status": "brouillon"
+    "title": "Kess se trompe ?",
+    "status": "programmé"
    },
    {
-    "time": "13:00",
+    "time": "13:23",
     "platform": "YouTube",
-    "title": "Défi 8 drapeaux",
+    "title": "Kess se trompe ?",
     "status": "programmé"
    },
    {
     "time": "17:00",
     "platform": "TikTok",
-    "title": "Spécial capitales",
-    "status": "brouillon"
+    "title": "Spécial géographie",
+    "status": "programmé"
    },
    {
-    "time": "18:00",
+    "time": "18:23",
     "platform": "YouTube",
-    "title": "Spécial capitales",
+    "title": "Spécial géographie",
     "status": "programmé"
    }
   ],
   "upcoming": [
    {
-    "day": "Vendredi 27",
+    "day": "Samedi 28",
     "text": "Production : 2 quiz en brouillon (à publier à 12:30 et 17:00)"
    }
   ],
   "engagement": {
-   "likes": null,
-   "comments": null,
-   "shares": null,
-   "followers_gain": null
+   "likes": 6,
+   "comments": 0,
+   "shares": 2,
+   "followers_gain": 3
   },
   "best_time": null,
   "drafts": [
    {
     "time": "12:30",
-    "label": "Défi 8 drapeaux",
-    "caption": "🚩 8 drapeaux, 3 secondes chacun : tu en trouves combien ? Ton score en commentaire 👇\n#quiz #testtonniveau #trivia\nVoix : SIWIS (licence CC-BY)"
+    "label": "Kess se trompe ?",
+    "caption": "🤔 Kess s'est trompé 4 fois sur 5… tu les as toutes repérées ? Vrai ou faux, dis-le en commentaire 👇\n#quiz #defi #quizfr\nVoix : SIWIS (licence CC-BY)"
    },
    {
     "time": "17:00",
-    "label": "Spécial capitales",
-    "caption": "📍 Spécial capitales : 8 questions, 3 secondes chacune. Ton score en commentaire 👇\n#quiz #quizz #cerveau\nVoix : SIWIS (licence CC-BY)"
+    "label": "Spécial géographie",
+    "caption": "🌊 Spécial géographie : 7 questions, 3 secondes chacune. Ton score en commentaire 👇\n#quiz #defi #culturegenerale\nVoix : SIWIS (licence CC-BY)"
    }
   ],
   "trend": {
    "labels": [
-    "20/11",
     "21/11",
     "22/11",
     "23/11",
     "24/11",
     "25/11",
-    "26/11"
+    "26/11",
+    "27/11"
    ],
    "series": {
     "TikTok": [
@@ -100,7 +100,7 @@
      null,
      null,
      null,
-     null,
+     643,
      null
     ]
    }
