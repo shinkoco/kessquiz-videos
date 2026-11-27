@@ -4,7 +4,7 @@ HERE=os.path.dirname(os.path.abspath(__file__)); __file__=os.path.join(HERE,'cor
 exec(open(os.path.join(HERE,'core.py')).read()); exec(open(os.path.join(HERE,'bank.py')).read())
 TIMER=3; L=lambda v: len(v)/SR
 THEMES={'drapeaux':("Drapeaux du monde",(32,190,200)),'capitales':("Capitales",(60,130,240)),'animaux':("Animaux",(60,175,90)),
-        'sciences':("Sciences",(225,150,0)),'histoire':("Histoire",(200,110,60)),'géographie':("Géographie",(30,165,140)),'actu':("Actu",(210,70,150)),'trompe':("Kess se trompe ?",(255,140,40))}
+        'sciences':("Sciences",(225,150,0)),'histoire':("Histoire",(200,110,60)),'géographie':("Géographie",(30,165,140)),'actu':("Actu",(210,70,150)),'sport':("Sport",(215,70,60)),'trompe':("Kess se trompe ?",(255,140,40))}
 MUSIC=[(122,220.0,[0,8,3,10],[0,None,7,None,12,10,7,None]),(126,246.9,[0,5,9,7],[0,4,7,None,9,7,4,None]),
        (118,196.0,[0,7,9,5],[7,None,4,None,0,2,4,None]),(128,233.1,[0,3,8,10],[0,3,7,10,7,3,None,None])]
 HYPE=["Premier drapeau, on s'échauffe !","Et celui-ci ?","Attention, il y a un piège !","Et ce drapeau-là ?","Un grand classique !",
@@ -37,7 +37,7 @@ def draw_flag(d,code,x,y,w,h):
         d.rectangle(z(cx-t2/2,y,cx+t2/2,y+h),fill=c[2]); d.rectangle(z(x,y+h/2-t2/2,x+w,y+h/2+t2/2),fill=c[2])
 def wrap(txt,font,maxw):
     out=[];line=""
-    for w in txt.split():
+    for w in txt.replace(" ?","\u00a0?").replace(" !","\u00a0!").split(" "):
         t=(line+" "+w).strip()
         if font.getlength(t)/S>maxw and line: out.append(line); line=w
         else: line=t
@@ -250,7 +250,7 @@ def render(kind,theme,out_path,seed):
     os.remove(raw); os.remove(wav)
     return items,NQ,ERR,TOTAL
 EMO={'drapeaux':["🌍","🚩","🗺️","🏳️"],'capitales':["🏙️","🗺️","📍","🌆"],'animaux':["🐾","🦁","🐙","🦒"],'sciences':["🔬","🚀","🧪","🪐"],
-     'histoire':["🏛️","⏳","📜","👑"],'géographie':["🌋","🗺️","🏔️","🌊"],'trompe':["❓","🤔","😏","🧐"]}
+     'histoire':["🏛️","⏳","📜","👑"],'géographie':["🌋","🗺️","🏔️","🌊"],'sport':["🏅","⚽","🏆","🎾"],'actu':["📰","🗞️","📅","✨"],'trompe':["❓","🤔","😏","🧐"]}
 HASHPOOL=["#quizz","#quiztime","#quizchallenge","#culturegenerale","#defi","#challenge","#jeu","#questionreponse",
           "#testtonniveau","#cerveau","#enigme","#trivia","#quizfr","#jeuxdereflexion"]
 CREDIT="Voix : SIWIS (licence CC-BY)"
@@ -274,9 +274,11 @@ def yt_meta(kind,theme,n,err,seed=0):
     desc=(f"{e[0]} Nouveau défi Kess Quiz !\n\nPenses-tu trouver toutes les bonnes réponses ? Note ton score en commentaire et défie tes amis.\n\n"
           "🏆 Bats Kess si tu peux ! Abonne-toi pour un nouveau défi chaque jour.\n\n"+tags+"\n\n"+CREDIT)
     return title[:100],desc
+def enough(t):  # au moins 7 questions jamais publiées
+    return sum(q[1]==t and q[0] not in hist['used'] for q in QCM)>=7
 def pick(rng):
     last=[v['theme'] for v in hist['videos'][-4:]]; lastk=[v['kind'] for v in hist['videos'][-1:]]
-    opts=[('drapeaux','drapeaux'),('trompe','trompe')]+[('qcm',t) for t in ('capitales','animaux','sciences','histoire','géographie','actu') if enough(t)]  # il faut assez de questions pour 60 s
+    opts=[('drapeaux','drapeaux'),('trompe','trompe')]+[('qcm',t) for t in ('capitales','animaux','sciences','histoire','géographie','actu','sport') if enough(t)]  # il faut assez de questions pour 60 s
     w=[]
     for k,t in opts:
         x=0 if t in last else 1.0

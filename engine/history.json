@@ -15,7 +15,19 @@
   "cap_vn",
   "cap_sc",
   "cap_br",
-  "cap_au"
+  "cap_au",
+  "t_chauvesouris",
+  "t_venus",
+  "t_foot",
+  "t_hexagone",
+  "t_muraille",
+  "geo_russie",
+  "geo_baikal",
+  "geo_kilimandjaro",
+  "geo_pacifique",
+  "geo_angel",
+  "geo_loire",
+  "geo_vatican"
  ],
  "videos": [
   {
@@ -50,6 +62,36 @@
     "cap_sc",
     "cap_br",
     "cap_au"
+   ]
+  },
+  {
+   "file": "kq_20261127_1_trompe_trompe.mp4",
+   "kind": "trompe",
+   "theme": "trompe",
+   "n": 5,
+   "date": "2026-11-27T08:48",
+   "ids": [
+    "t_chauvesouris",
+    "t_venus",
+    "t_foot",
+    "t_hexagone",
+    "t_muraille"
+   ]
+  },
+  {
+   "file": "kq_20261127_2_qcm_geographie.mp4",
+   "kind": "qcm",
+   "theme": "géographie",
+   "n": 7,
+   "date": "2026-11-27T08:48",
+   "ids": [
+    "geo_russie",
+    "geo_baikal",
+    "geo_kilimandjaro",
+    "geo_pacifique",
+    "geo_angel",
+    "geo_loire",
+    "geo_vatican"
    ]
   }
  ]

@@ -90,6 +90,14 @@ QCM=[
  ('act_bepi2026','actu',"En novembre 2026, autour de quelle planète la sonde BepiColombo s'est-elle mise en orbite ?",["Mercure","Vénus","Mars"],"Autour de Mercure !",None),
  ('act_goncourt2026','actu',"Qui a remporté le prix Goncourt en 2026 ?",["Philippe Jaenada","Laurent Mauvignier","Kamel Daoud"],"C'est Philippe Jaenada !",None),
  ('act_atp2026','actu',"En novembre 2026, qui a gagné les ATP Finals en simple à Turin ?",["Carlos Alcaraz","Alexander Zverev","Jannik Sinner"],"C'est Carlos Alcaraz !",None),
+ ('act_f1_2026','actu',"En novembre 2026, qui est devenu champion du monde de Formule 1 ?",["Kimi Antonelli","Max Verstappen","Lewis Hamilton"],"C'est Kimi Antonelli !","Il est devenu le plus jeune champion du monde de l'histoire de la F1."),
+ ('act_motogp2026','actu',"En novembre 2026, qui a été sacré champion du monde de MotoGP ?",["Marc Márquez","Marco Bezzecchi","Jorge Martín"],"C'est Marc Márquez !",None),
+ ('spo_volley','sport',"Au volley en salle, combien de joueurs par équipe sur le terrain ?",["6","5","7"],"Six joueurs !",None),
+ ('spo_marathon','sport',"Quelle est la distance officielle d'un marathon ?",["42,195 km","40 km","45,5 km"],"Quarante-deux kilomètres cent quatre-vingt-quinze !",None),
+ ('spo_rugby','sport',"Au rugby à XV, combien de points vaut un essai ?",["5","4","6"],"Cinq points !",None),
+ ('spo_anneaux','sport',"Combien y a-t-il d'anneaux sur le drapeau olympique ?",["5","4","6"],"Cinq anneaux !","Ils représentent les cinq parties du monde."),
+ ('spo_jo2028','sport',"Quelle ville accueillera les Jeux olympiques d'été de 2028 ?",["Los Angeles","Brisbane","Madrid"],"C'est Los Angeles !",None),
+ ('spo_roland','sport',"Sur quelle surface se joue le tournoi de Roland-Garros ?",["La terre battue","Le gazon","La surface dure"],"Sur la terre battue !",None),
 ]
 # Kess se trompe : (id, question, réponse affichée, réponse dite, Kess a raison ?, verdict dit, verdict affiché)
 TROMPE=[
