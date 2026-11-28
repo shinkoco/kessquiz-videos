@@ -98,6 +98,14 @@ QCM=[
  ('spo_anneaux','sport',"Combien y a-t-il d'anneaux sur le drapeau olympique ?",["5","4","6"],"Cinq anneaux !","Ils représentent les cinq parties du monde."),
  ('spo_jo2028','sport',"Quelle ville accueillera les Jeux olympiques d'été de 2028 ?",["Los Angeles","Brisbane","Madrid"],"C'est Los Angeles !",None),
  ('spo_roland','sport',"Sur quelle surface se joue le tournoi de Roland-Garros ?",["La terre battue","Le gazon","La surface dure"],"Sur la terre battue !",None),
+ ('act_cambridge2026','actu',"En novembre 2026, quel mot de l'année le dictionnaire de Cambridge a-t-il choisi ?",["Human (humain)","Robot","Planet (planète)"],"C'est human, humain en anglais !",None),
+ ('spo_hand','sport',"Au handball en salle, combien de joueurs par équipe, gardien compris ?",["7","6","8"],"Sept joueurs !",None),
+ ('geo_tajmahal','géographie',"Dans quel pays se trouve le Taj Mahal ?",["L'Inde","Le Pakistan","Le Népal"],"En Inde !",None),
+ ('geo_machu','géographie',"Dans quel pays se trouve le Machu Picchu ?",["Le Pérou","La Bolivie","La Colombie"],"Au Pérou !",None),
+ ('geo_petra','géographie',"Dans quel pays se trouve la cité de Pétra ?",["La Jordanie","L'Égypte","La Turquie"],"En Jordanie !",None),
+ ('geo_angkor','géographie',"Dans quel pays se trouve le temple d'Angkor Vat ?",["Le Cambodge","La Thaïlande","Le Vietnam"],"Au Cambodge !",None),
+ ('geo_chichen','géographie',"Dans quel pays se trouve le site maya de Chichén Itzá ?",["Le Mexique","Le Guatemala","Le Honduras"],"Au Mexique !",None),
+ ('geo_rapanui','géographie',"De quel pays dépend l'île de Pâques ?",["Le Chili","Le Pérou","L'Équateur"],"Du Chili !",None),
 ]
 # Kess se trompe : (id, question, réponse affichée, réponse dite, Kess a raison ?, verdict dit, verdict affiché)
 TROMPE=[

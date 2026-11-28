@@ -27,7 +27,22 @@
   "geo_pacifique",
   "geo_angel",
   "geo_loire",
-  "geo_vatican"
+  "geo_vatican",
+  "spo_anneaux",
+  "spo_marathon",
+  "spo_jo2028",
+  "spo_volley",
+  "spo_roland",
+  "spo_rugby",
+  "spo_hand",
+  "f_no",
+  "f_it",
+  "f_is",
+  "f_ua",
+  "f_fi",
+  "f_ml",
+  "f_be",
+  "f_dk"
  ],
  "videos": [
   {
@@ -92,6 +107,39 @@
     "geo_angel",
     "geo_loire",
     "geo_vatican"
+   ]
+  },
+  {
+   "file": "kq_20261128_1_qcm_sport.mp4",
+   "kind": "qcm",
+   "theme": "sport",
+   "n": 7,
+   "date": "2026-11-28T08:37",
+   "ids": [
+    "spo_anneaux",
+    "spo_marathon",
+    "spo_jo2028",
+    "spo_volley",
+    "spo_roland",
+    "spo_rugby",
+    "spo_hand"
+   ]
+  },
+  {
+   "file": "kq_20261128_2_drapeaux_drapeaux.mp4",
+   "kind": "drapeaux",
+   "theme": "drapeaux",
+   "n": 8,
+   "date": "2026-11-28T08:37",
+   "ids": [
+    "f_no",
+    "f_it",
+    "f_is",
+    "f_ua",
+    "f_fi",
+    "f_ml",
+    "f_be",
+    "f_dk"
    ]
   }
  ]
